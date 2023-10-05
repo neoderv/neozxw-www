@@ -74,6 +74,7 @@
         color: var(--light-1);
         box-shadow: var(--shadow-1);
         font-weight: bold;
+        padding: 10px;
     }
 
     :global(form) {
