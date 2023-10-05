@@ -1,0 +1,1 @@
+CREATE TABLE IF NOT EXISTS project (username TEXT, title TEXT, id TEXT, date REAL);
