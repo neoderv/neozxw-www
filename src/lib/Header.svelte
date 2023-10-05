@@ -2,7 +2,7 @@
     import { onMount } from "svelte";
 
     export let data = { username: "!nobody" };
-    
+
     let { username } = data;
     let url = "";
 
@@ -13,7 +13,7 @@
 
 <div class="area">
     <div class="row">
-        <a href="/">Home</a>
+        <a href="/"> <img class="icon" src="/icon.svg" alt="Home" /></a>
         {#if username == "!nobody"}
             <a href="https://auth.dervland.net/login?next={url}">Log in</a>
         {:else}
@@ -24,17 +24,27 @@
 </div>
 
 <style>
+    .icon {
+        height: 2em;
+        width: 2em;
+        border-radius: 3rem;
+        border: solid white 0.2em;
+        margin: 0;
+    }
+
     .row {
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: space-between;
+        align-items: center;
     }
 
     .row a {
         margin: 10px;
         font-weight: bold;
         color: var(--light-1);
+        display: flex;
     }
 
     .area {
@@ -42,7 +52,7 @@
 
         background: var(--main-1);
 
-        padding: 10px;
+        padding: 3px;
         margin-top: 10px;
     }
 </style>

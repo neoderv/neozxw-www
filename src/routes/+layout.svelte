@@ -28,7 +28,7 @@
         --dark-1: #2b2f36;
         --dark-2: #d8d8d8;
         
-        --main-1: #794dff;
+        --main-1: #957aa7;
 
         --light-1: #ffffff;
         --light-2: #f8f8f8;

@@ -16,7 +16,9 @@
         width: 210px;
         height: 120px;
         object-fit: cover;
-        background: black;
+        background-image: linear-gradient(to top, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.3)), url('/icon.svg');
+        background-size: cover, cover;
+        background-position: center, center;
     }
 
     .vmeta {
