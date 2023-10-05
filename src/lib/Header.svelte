@@ -11,7 +11,7 @@
     });
 </script>
 
-<div class="main">
+<div class="area">
     <div class="row">
         <a href="/">Home</a>
         {#if username == "!nobody"}
@@ -28,6 +28,7 @@
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
+        justify-content: space-between;
     }
 
     .row a {
@@ -36,13 +37,7 @@
         color: var(--light-1);
     }
 
-    .main {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-
-        width: 500px;
-
+    .area {
         box-shadow: var(--shadow-1);
 
         background: var(--main-1);

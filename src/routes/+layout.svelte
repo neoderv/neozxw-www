@@ -55,7 +55,20 @@
         margin-bottom: 0.5rem;
     }
 
-    #main-content {
-        width: 520px;
+    :global(.area, form) {
+        display: grid;
+        grid-template-columns: 1fr;
+        max-width: 90vw;
+        width: 700px;
+
+        box-shadow: var(--shadow-1);
+
+        padding: 10px;
+        margin-top: 10px;
     }
+
+    :global(form) {
+        grid-template-columns: 0.7fr 1fr;
+    }
+
 </style>

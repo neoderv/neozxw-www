@@ -1,11 +1,21 @@
 <script>
+    /** @type {import('./$types').PageData} */
+    export let data;
+
     import Project from "../lib/Project.svelte";
 </script>
 
-<div class="list">
-    {#each data.data as proj}
-        <Project title={proj.title} id={proj.id} date={proj.date} username={proj.username} />
-    {/each}
+<div class="area">
+    <div class="list">
+        {#each data.query as proj}
+            <Project
+                title={proj.title}
+                id={proj.id}
+                date={proj.date}
+                username={proj.username}
+            />
+        {/each}
+    </div>
 </div>
 
 <style>

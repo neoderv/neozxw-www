@@ -8,7 +8,7 @@
         <div class="big"><b>{title}</b></div>
     </a>
     <div><a href="/users/{username}">{username}</a></div>
-    <div>{date}</div>
+    <div>{(new Date(date)+'').split('GMT')[0]}</div>
 </div>
 
 <style>
