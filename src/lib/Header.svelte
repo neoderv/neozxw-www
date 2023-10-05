@@ -18,7 +18,7 @@
             <a href="https://auth.dervland.net/login?next={url}">Log in</a>
         {:else}
             <a href="/users/{username}">{username}</a>
-            <a href="/create">Create</a>
+            <a href="https://create.neozxw.net/editor.html">Create</a>
         {/if}
     </div>
 </div>
