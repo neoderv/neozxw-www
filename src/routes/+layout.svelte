@@ -67,6 +67,15 @@
         margin-top: 10px;
     }
 
+    :global(.button) {
+        display: flex;
+        padding: 1rem;
+        background: var(--main-1);
+        color: var(--light-1);
+        box-shadow: var(--shadow-1);
+        font-weight: bold;
+    }
+
     :global(form) {
         grid-template-columns: 0.7fr 1fr;
     }

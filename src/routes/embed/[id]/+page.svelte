@@ -18,6 +18,7 @@
         width="480"
         height="360"
     />
+    <a class='button' href="https://create.neozxw.net/editor.html?project_url={proj}">Edit</a>
 </div>
 
 <style>
