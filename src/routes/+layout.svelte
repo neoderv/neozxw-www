@@ -84,4 +84,8 @@
     :global(#main-content) {
         overflow-y: auto;
     }
+
+    :global(.big) {
+        font-size: 1.2rem;
+    }
 </style>

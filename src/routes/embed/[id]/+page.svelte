@@ -18,9 +18,17 @@
         width="480"
         height="360"
     />
-    <a class='button' href="https://create.neozxw.net/editor.html?project_url={proj}">
-        {data.username == data.data.username ? 'Edit' : 'Remix'}
-    </a>
+    <div class="big"><b>{data.data.title}</b></div>
+    <div><a href="/users/{data.data.username}">{data.data.username}</a></div>
+    <div>{(new Date(data.data.date) + "").split("GMT")[0]}</div>
+    <div>
+        <a
+            class="button"
+            href="https://create.neozxw.net/editor.html?project_url={proj}"
+        >
+            {data.username == data.data.username ? "Edit" : "Remix"}
+        </a>
+    </div>
 </div>
 
 <style>
