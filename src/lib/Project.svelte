@@ -1,5 +1,5 @@
 <script>
-    export let username, title, id, date;
+    export let username, title, id, date, you;
 </script>
 
 <div class="vmeta">
@@ -8,6 +8,7 @@
         <div class="big"><b>{title}</b></div>
     </a>
     <div><a href="/users/{username}">{username}</a></div>
+    <div>{you}</div>
     <div>{(new Date(date)+'').split('GMT')[0]}</div>
 </div>
 

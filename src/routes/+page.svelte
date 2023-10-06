@@ -13,6 +13,7 @@
                 id={proj.id}
                 date={proj.date}
                 username={proj.username}
+                you={data.username}
             />
         {/each}
     </div>
