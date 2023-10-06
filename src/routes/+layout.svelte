@@ -1,11 +1,11 @@
 <script>
     /** @type {import('./$types').LayoutData} */
-	export let data;
+    export let data;
 
-    import Header from '$lib/Header.svelte';
+    import Header from "$lib/Header.svelte";
 </script>
 
-<Header data={data}/>
+<Header {data} />
 
 <div id="main-content">
     <slot />
@@ -27,7 +27,7 @@
     :global(:root) {
         --dark-1: #2b2f36;
         --dark-2: #d8d8d8;
-        
+
         --main-1: #957aa7;
 
         --light-1: #ffffff;
@@ -81,4 +81,7 @@
         grid-template-columns: 0.7fr 1fr;
     }
 
+    :global(#main-content) {
+        overflow-y: auto;
+    }
 </style>

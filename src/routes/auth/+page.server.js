@@ -9,6 +9,6 @@ export async function load({ params, url, cookies }) {
             maxAge: 60 * 60 * 24 * 7
         })
     }
-    throw redirect(300, '/');
+    throw redirect(302, '/');
     return;
 }

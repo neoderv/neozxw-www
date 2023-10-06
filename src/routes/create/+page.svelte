@@ -3,6 +3,8 @@
     <input type='text' name='title'>
     <p>Project .sb3</p>
     <input type='file' name='file'>
+    <p>Project to edit or remix</p>
+    <input type='text' name='root'>
     <p>Upload</p>
     <input type='submit'>
 </form>
