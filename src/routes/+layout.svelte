@@ -86,6 +86,10 @@
         padding: 5px;
     }
 
+    :global(p, h1) {
+        width: 600px;
+    }
+
     :global(.big) {
         font-size: 1.2rem;
     }
