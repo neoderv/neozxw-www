@@ -1,7 +1,7 @@
 import { redirect } from '@sveltejs/kit';
 
 /** @type {import('./$types').PageServerLoad} */
-export async function load({ params, url, cookies }) {
+export async function load({ url, cookies }) {
     let token = url.searchParams.get('data');
     if (token) {
         cookies.set('token', token, {

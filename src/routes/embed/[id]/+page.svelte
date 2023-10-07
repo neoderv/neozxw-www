@@ -10,6 +10,7 @@
         let id = encodeURIComponent(data.id);
         proj = encodeURIComponent(`${window.location.href}/../../raw/${id}`);
     });
+
 </script>
 
 <div class="area">
@@ -26,7 +27,7 @@
             class="button"
             href="https://create.neozxw.net/editor.html?project_url={proj}"
         >
-            {data.username == data.data.username ? "Edit" : "Remix"}
+            {data.authVal.username == data.data.username ? "Edit" : "Remix"}
         </a>
     </div>
 </div>

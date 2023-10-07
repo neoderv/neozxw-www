@@ -3,7 +3,7 @@
 
     export let data = { username: "!nobody" };
 
-    let { username } = data;
+    let { username } = data.authVal;
     let url = "";
 
     onMount(() => {

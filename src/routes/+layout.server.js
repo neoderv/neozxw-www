@@ -4,5 +4,5 @@ import { auth } from '$lib/auth.js';
 export async function load({fetch, cookies}) {
     let authVal = await auth(fetch, cookies);
 
-	return authVal;
+	return {authVal};
 }

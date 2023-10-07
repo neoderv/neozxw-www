@@ -1,5 +1,5 @@
 <script>
-    export let username, title, id, date, you;
+    export let username, title, id, date;
 </script>
 
 <div class="vmeta">
