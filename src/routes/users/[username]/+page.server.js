@@ -8,5 +8,5 @@ export async function load({ params }) {
     let query = await db.all('SELECT * FROM project WHERE username = ? ORDER BY id DESC', [
         params.username
     ]);
-    return { query };
+    return { query, theuser: params.username };
 }
