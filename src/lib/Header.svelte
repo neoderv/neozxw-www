@@ -11,16 +11,14 @@
     });
 </script>
 
-<div class="area">
-    <div class="row">
-        <a href="/"> <img class="icon" src="/icon.svg" alt="Home" /></a>
-        {#if username == "!nobody"}
-            <a href="https://auth.dervland.net/login?next={url}">Log in</a>
-        {:else}
-            <a href="/users/{username}">{username}</a>
-            <a href="https://create.neozxw.net/editor.html">Create</a>
-        {/if}
-    </div>
+<div class="area row">
+    <a href="/"> <img class="icon" src="/icon.svg" alt="Home" /></a>
+    {#if username == "!nobody"}
+        <a href="https://auth.dervland.net/login?next={url}">Log in</a>
+    {:else}
+        <a href="/users/{username}">{username}</a>
+        <a href="https://create.neozxw.net/editor.html">Create</a>
+    {/if}
 </div>
 
 <style>

@@ -83,6 +83,7 @@
 
     :global(#main-content) {
         overflow-y: auto;
+        padding: 5px;
     }
 
     :global(.big) {
