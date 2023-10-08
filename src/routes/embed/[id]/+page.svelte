@@ -16,8 +16,8 @@
 <div class="area">
     <iframe
         src="https://create.neozxw.net/embed.html?project_url={proj}"
-        width="480"
-        height="360"
+        width="499"
+        height="416"
     />
     <div class="big"><b>{data.data.title}</b></div>
     <div><a href="/users/{data.data.username}">{data.data.username}</a></div>
