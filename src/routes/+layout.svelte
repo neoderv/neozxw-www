@@ -93,4 +93,12 @@
     :global(.big) {
         font-size: 1.2rem;
     }
+
+    :global(.icon) {
+        height: 2em;
+        width: 2em;
+        border-radius: 3rem;
+        border: solid white 0.2em;
+        margin: 0;
+    }
 </style>

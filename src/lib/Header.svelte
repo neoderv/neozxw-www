@@ -22,14 +22,6 @@
 </div>
 
 <style>
-    .icon {
-        height: 2em;
-        width: 2em;
-        border-radius: 3rem;
-        border: solid white 0.2em;
-        margin: 0;
-    }
-
     .row {
         display: flex;
         flex-direction: row;

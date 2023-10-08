@@ -8,7 +8,7 @@
 
     onMount(() => {
         let id = encodeURIComponent(data.id);
-        proj = encodeURIComponent(`${window.location.href}/../../raw/${id}`);
+        proj = encodeURIComponent(`${window.location.href}/../../raw/projects/${id}`);
     });
 
     import ProjectList from "$lib/ProjectList.svelte";
