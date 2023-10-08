@@ -87,7 +87,7 @@
     }
 
     :global(p, h1) {
-        width: 600px;
+        max-width: 600px;
     }
 
     :global(.big) {
