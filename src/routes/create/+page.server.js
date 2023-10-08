@@ -32,11 +32,12 @@ export const actions = {
             id = baseProject.id;
             
         } else {
-            await db.run('INSERT INTO project (username, title, id, date) VALUES (?,?,?,?)',[
+            await db.run('INSERT INTO project (username, title, id, date, root) VALUES (?,?,?,?,?)',[
                 username.username,
                 title,
                 id,
-                date
+                date,
+                (root && root != '') ? (parseInt(root) + '') : null
             ]);
         }
 

@@ -8,5 +8,10 @@ export async function load({params}) {
 	let query = await db.all('SELECT * FROM project WHERE id = ?',[
 		params.id
 	]);
-	return {id: params.id, data: query[0]};
+
+	let remixes = await db.all('SELECT * FROM project WHERE root = ?',[
+		params.id
+	]);
+
+	return {id: params.id, data: query[0], remixes};
 }

@@ -1,1 +1,1 @@
-CREATE TABLE IF NOT EXISTS project (username TEXT, title TEXT, id TEXT, date REAL);
+CREATE TABLE IF NOT EXISTS project (username TEXT, title TEXT, id TEXT, date REAL, root TEXT);

@@ -64,7 +64,7 @@
         box-shadow: var(--shadow-1);
 
         padding: 10px;
-        margin-top: 10px;
+        margin: 10px;
     }
 
     :global(.button) {

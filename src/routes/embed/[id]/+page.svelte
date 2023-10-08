@@ -11,6 +11,7 @@
         proj = encodeURIComponent(`${window.location.href}/../../raw/${id}`);
     });
 
+    import ProjectList from "$lib/ProjectList.svelte";
 </script>
 
 <div class="area">
@@ -21,6 +22,11 @@
     />
     <div class="big"><b>{data.data.title}</b></div>
     <div><a href="/users/{data.data.username}">{data.data.username}</a></div>
+    {#if data.data.root}
+        <div>
+            <a href="/embed/{data.data.root}">Original project</a>
+        </div>
+    {/if}
     <div>{(new Date(data.data.date) + "").split("GMT")[0]}</div>
     <div>
         <a
@@ -30,6 +36,10 @@
             {data.authVal.username == data.data.username ? "Edit" : "Remix"}
         </a>
     </div>
+</div>
+<div class="area">
+    <h1>Remixes</h1>
+    <ProjectList projects={data.remixes} />
 </div>
 
 <style>
