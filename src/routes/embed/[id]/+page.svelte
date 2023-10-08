@@ -8,7 +8,9 @@
 
     onMount(() => {
         let id = encodeURIComponent(data.id);
-        proj = encodeURIComponent(`${window.location.href}/../../raw/projects/${id}`);
+        proj = encodeURIComponent(
+            `${window.location.href}/../../raw/projects/${id}`
+        );
     });
 
     import ProjectList from "$lib/ProjectList.svelte";
@@ -20,14 +22,23 @@
         width="499"
         height="416"
     />
-    <div class="big"><b>{data.data.title}</b></div>
-    <div><a href="/users/{data.data.username}">{data.data.username}</a></div>
-    {#if data.data.root}
-        <div>
-            <a href="/embed/{data.data.root}">Original project</a>
-        </div>
-    {/if}
-    <div>{(new Date(data.data.date) + "").split("GMT")[0]}</div>
+    <div class='row'>
+        <span class='big'><b>{data.data.title}</b></span> by
+        <b><a href="/users/{data.data.username}">{data.data.username}</a></b>
+    </div>
+    <div class="row">
+        <span />
+        {#if data.data.root}
+            <span>
+                Remixed from <b
+                    ><a href="/embed/{data.data.root}">another project</a></b
+                >
+            </span>
+        {/if}
+        <span>
+            Created on <b>{(new Date(data.data.date) + "").split("GMT")[0]}</b>
+        </span>
+    </div>
     <div>
         <a
             class="button"
@@ -51,4 +62,6 @@
     iframe {
         border: none;
     }
+
+
 </style>

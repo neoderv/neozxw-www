@@ -28,7 +28,7 @@
         --dark-1: #2b2f36;
         --dark-2: #d8d8d8;
 
-        --main-1: #957aa7;
+        --main-1: #b072da;
 
         --light-1: #ffffff;
         --light-2: #f8f8f8;
@@ -47,7 +47,7 @@
 
     :global(input, textarea) {
         border: 0;
-        border-radius: 0.2rem;
+        border-radius: 1rem;
         box-shadow: var(--shadow-1);
 
         font-size: 1rem;
@@ -100,5 +100,9 @@
         border-radius: 3rem;
         border: solid white 0.2em;
         margin: 0;
+    }
+
+    :global(div, .button) {
+        border-radius: 1rem;
     }
 </style>
