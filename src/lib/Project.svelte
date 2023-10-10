@@ -3,7 +3,7 @@
 </script>
 
 <div class="vmeta">
-    <a href="/embed/{id}">
+    <a href="/embed/{id}" data-sveltekit-reload >
         <div class="thumb" />
         <div class="big"><b>{title}</b></div>
     </a>

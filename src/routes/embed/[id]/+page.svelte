@@ -5,6 +5,7 @@
     export let data;
 
     let proj = "";
+    let iframe = false;
 
     onMount(() => {
         let id = encodeURIComponent(data.id);
@@ -18,21 +19,22 @@
 
 <div class="area">
     <iframe
+        bind:this={iframe}
         src="https://create.neozxw.net/embed.html?project_url={proj}"
         width="499"
         height="416"
+        title="project"
     />
     <div class='row'>
         <span class='big'><b>{data.data.title}</b></span> by
         <b><a href="/users/{data.data.username}">{data.data.username}</a></b>
     </div>
-    <div class="row">
-        <span />
+    <div class="row margin">
         {#if data.data.root}
             <span>
-                Remixed from <b
-                    ><a href="/embed/{data.data.root}">another project</a></b
-                >
+                Remixed from <b>
+                    <a data-sveltekit-reload href="/embed/{data.data.root}" >another project</a>
+                </b>
             </span>
         {/if}
         <span>
@@ -58,6 +60,13 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+    }
+    .margin {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+        flex-wrap: wrap;
     }
     iframe {
         border: none;
