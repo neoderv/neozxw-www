@@ -30,16 +30,28 @@
         <b><a href="/users/{data.data.username}">{data.data.username}</a></b>
     </div>
     <div class="row margin">
-        {#if data.data.root}
+        <span>
+            Created on <b>{(new Date(data.data.date) + "").split("GMT")[0]}</b>
+        </span>
+        {#if data.data.parent}
             <span>
                 Remixed from <b>
+                    <a data-sveltekit-reload href="/embed/{data.data.parent}" >another project</a>
+                </b>
+            </span>
+        {/if}
+    </div>
+    <div class="row margin">
+        <span>
+            
+        </span>
+        {#if data.data.root}
+            <span>
+                In chain of <b>
                     <a data-sveltekit-reload href="/embed/{data.data.root}" >another project</a>
                 </b>
             </span>
         {/if}
-        <span>
-            Created on <b>{(new Date(data.data.date) + "").split("GMT")[0]}</b>
-        </span>
     </div>
     <div>
         <a

@@ -5,7 +5,7 @@ import { initDb } from '$lib/db.js';
 export async function GET({params}) {
     let db = await initDb();
 
-    let query = await db.all('SELECT * FROM project ORDER BY id DESC LIMIT ?, ?', [
+    let query = await db.all('SELECT * FROM project ORDER BY date DESC LIMIT ?, ?', [
         params.page * 5,
         5
     ]);

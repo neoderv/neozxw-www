@@ -14,13 +14,13 @@ export const actions = {
         const data = await request.formData();
         let title = data.get('title');
         let file = data.get('file');
-        let root = data.get('root');
+        let root = parseInt(data.get('root')) + '';
 
         let id = (await db.all('SELECT * from project')).length + 1;
         let date = +(new Date);
 
         let baseProject = (await db.all('SELECT * from project WHERE id = ?', [
-            root + ''
+            root
         ]))[0];
 
         if (baseProject && baseProject.username == username.username) {
@@ -32,12 +32,13 @@ export const actions = {
             id = baseProject.id;
             
         } else {
-            await db.run('INSERT INTO project (username, title, id, date, root) VALUES (?,?,?,?,?)',[
+            await db.run('INSERT INTO project (username, title, id, date, root, parent) VALUES (?,?,?,?,?, ?)',[
                 username.username,
                 title,
                 id,
                 date,
-                (root && root != '') ? (parseInt(root) + '') : null
+                (baseProject) ? baseProject.root : id,
+                (baseProject) ? root : null
             ]);
         }
 
