@@ -12,6 +12,7 @@
         if (!e) return;
 
         let json = await fetch(endpoint+page).then(x => x.json());
+        if (!json || json.length < 1) return;
         projects = [...projects,...json];
         page++;
         observer.disconnect();
