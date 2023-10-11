@@ -102,7 +102,7 @@
         margin: 0;
     }
 
-    :global(div, .button) {
+    :global(div, .button, form) {
         border-radius: 1rem;
     }
 </style>

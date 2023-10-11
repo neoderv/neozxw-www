@@ -1,16 +1,9 @@
-
-import { initDb } from '$lib/db.js';
 import { writeFile } from 'fs/promises';
 import { auth } from '$lib/auth.js';
 
 /** @type {import('./$types').PageServerLoad} */
 export async function load({ params }) {
-    let db = await initDb();
-
-    let query = await db.all('SELECT * FROM project WHERE username = ? ORDER BY id DESC', [
-        params.username
-    ]);
-    return { query, theuser: params.username };
+    return { theUser: params.username };
 }
 
 /** @type {import('./$types').Actions} */

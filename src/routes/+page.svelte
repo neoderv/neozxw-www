@@ -18,5 +18,5 @@
 </div>
 
 <div class="area">
-    <ProjectList projects={data.query} />
+    <ProjectList endpoint="/projects/home/" />
 </div>
