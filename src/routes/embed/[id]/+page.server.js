@@ -1,4 +1,4 @@
-
+import { auth } from '$lib/auth.js';
 import { initDb } from '$lib/db.js';
 
 /** @type {import('./$types').PageServerLoad} */
@@ -9,9 +9,5 @@ export async function load({params}) {
 		params.id
 	]);
 
-	let remixes = await db.all('SELECT * FROM project WHERE root = ?',[
-		params.id
-	]);
-
-	return {id: params.id, data: query[0], remixes};
+	return {id: params.id, data: query[0]};
 }

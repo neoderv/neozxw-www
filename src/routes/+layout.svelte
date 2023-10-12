@@ -60,7 +60,6 @@
         grid-template-columns: 1fr;
         max-width: 90vw;
         width: 700px;
-
         box-shadow: var(--shadow-1);
 
         padding: 10px;
