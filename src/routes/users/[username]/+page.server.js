@@ -1,9 +1,18 @@
 import { writeFile } from 'fs/promises';
 import { auth } from '$lib/auth.js';
+import { initDb } from '$lib/db.js';
 
 /** @type {import('./$types').PageServerLoad} */
 export async function load({ params }) {
-    return { theUser: params.username };
+    let db = await initDb();
+
+    let userData = await db.all('SELECT * FROM user WHERE username = ?', [
+        params.username
+    ]);
+
+    userData = (userData.length > 0) ? userData[0] : {};
+
+    return { theUser: params.username, userData };
 }
 
 /** @type {import('./$types').Actions} */

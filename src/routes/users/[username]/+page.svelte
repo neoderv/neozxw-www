@@ -4,11 +4,13 @@
 
     import ProjectList from "$lib/ProjectList.svelte";
 
-    let {authVal, theUser} = data;
+    let {authVal, theUser, userData} = data;
+
+    let displayUser = (userData.isAdmin == 'admin') ? `${theUser} [admin]` : theUser;
 </script>
 
 <div class="area">
-    <h2><img src='/raw/pfp/{theUser}' alt='' class='icon'>{theUser}</h2>
+    <h2><img src='/raw/pfp/{theUser}' alt='' class='icon'>{displayUser}</h2>
     <p>A user on the NeoZXW platform</p>
 </div>
 <div class="area">

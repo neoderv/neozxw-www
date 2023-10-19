@@ -68,6 +68,7 @@
 
     :global(.button) {
         display: flex;
+        justify-content: center;
         padding: 1rem;
         background: var(--main-1);
         color: var(--light-1);

@@ -1,4 +1,3 @@
-import { auth } from '$lib/auth.js';
 import { initDb } from '$lib/db.js';
 
 /** @type {import('./$types').PageServerLoad} */

@@ -33,9 +33,13 @@
         </div>
         <div class="row margin">
             <span>
-                Created on <b
-                    >{(new Date(data.data.date) + "").split("GMT")[0]}</b
-                >
+                {#if data.data.date != "none"}
+                    Created on <b
+                        >{(new Date(data.data.date) + "").split("GMT")[0]}</b
+                    >
+                {:else}
+                    <b>Unlisted</b>
+                {/if}
             </span>
             {#if data.data.parent}
                 <span>
@@ -60,13 +64,16 @@
                 </span>
             {/if}
         </div>
-        <div>
+        <div class="margin">
             <a
                 class="button"
                 href="https://create.neozxw.net/editor.html?project_url={proj}"
             >
                 {data.authVal.username == data.data.username ? "Edit" : "Remix"}
             </a>
+            {#if data.authVal.isAdmin}
+                <a class="button" href="/admin"> Admin </a>
+            {/if}
         </div>
     {/if}
 </div>
