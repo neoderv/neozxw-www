@@ -94,13 +94,6 @@
         flex-direction: column;
         align-items: center;
     }
-    .margin {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        width: 100%;
-        flex-wrap: wrap;
-    }
     iframe {
         border: none;
     }

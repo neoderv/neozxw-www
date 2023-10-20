@@ -27,5 +27,9 @@ export const actions = {
 		if (params.type == 'project') { 
 			throw redirect(302, '/embed/'+params.id);
 		}
+
+		if (params.type == 'user') {
+			throw redirect(302, '/users/'+params.id);
+		}
     }
 }

@@ -105,4 +105,12 @@
     :global(div, .button, form) {
         border-radius: 1rem;
     }
+
+    :global(.margin) {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+        flex-wrap: wrap;
+    }
 </style>
