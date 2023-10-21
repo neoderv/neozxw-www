@@ -10,7 +10,7 @@
         userData.isAdmin == "admin" ? `${theUser} [admin]` : theUser;
 </script>
 
-<div class="area">
+<div class="area small">
     <h2><img src="/raw/pfp/{theUser}" alt="" class="icon" />{displayUser}</h2>
     <p>A user on the NeoZXW platform</p>
 

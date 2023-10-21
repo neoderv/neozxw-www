@@ -8,7 +8,7 @@
 </script>
 
 <div class="area">
-    <h3>Projects of {theUser}</h3>
+    <h3>Projects by {theUser}</h3>
 
     <ProjectList endpoint="/projects/users/{theUser}/" />
 </div>

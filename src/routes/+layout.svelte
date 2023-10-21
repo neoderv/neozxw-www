@@ -56,14 +56,29 @@
     }
 
     :global(.area, form) {
-        display: grid;
-        grid-template-columns: 1fr;
+        display: flex;
+        flex-direction: column;
         max-width: 90vw;
         width: 700px;
         box-shadow: var(--shadow-1);
 
         padding: 10px;
         margin: 10px;
+
+        grid-column: span 2;
+    }
+
+    :global(.area.small, form) {
+        grid-column: span 1;
+        width: 330px;
+    }
+
+    @media only screen and (max-width: 800px) {
+        :global(.area.small, form) {
+            grid-column: span 2;
+            width: 700px;
+            max-width: 90vw;
+        }
     }
 
     :global(.button) {
@@ -77,13 +92,11 @@
         margin: 10px;
     }
 
-    :global(form) {
-        grid-template-columns: 0.7fr 1fr;
-    }
-
     :global(#main-content) {
         overflow-y: auto;
         padding: 5px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
     }
 
     :global(p, h1) {
@@ -112,5 +125,9 @@
         justify-content: space-between;
         width: 100%;
         flex-wrap: wrap;
+    }
+
+    :global(form p) {
+        font-weight: bold;
     }
 </style>

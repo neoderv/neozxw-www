@@ -71,15 +71,12 @@
             >
                 {data.authVal.username == data.data.username ? "Edit" : "Remix"}
             </a>
+            <a class="button" href="/embed/{data.id}/remixes">All Remixes</a>
             {#if data.authVal.isAdmin}
                 <a class="button" href="/admin"> Admin </a>
             {/if}
         </div>
     {/if}
-</div>
-<div class="area">
-    <h1>Remixes</h1>
-    <ProjectList endpoint="/remixes/{data.id}/" />
 </div>
 
 <ProjectList
