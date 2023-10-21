@@ -4,6 +4,7 @@
     export let data = { username: "!nobody" };
 
     let { username } = data.authVal;
+    let count = data.messages.length;
     let url = "";
 
     onMount(() => {
@@ -17,6 +18,7 @@
         <a href="https://auth.dervland.net/login?next={url}">Log in</a>
     {:else}
         <a href="/users/{username}">{username}</a>
+        <a href="/messages">Messages ({count})</a>
         <a href="https://create.neozxw.net/editor.html">Create</a>
     {/if}
 </div>

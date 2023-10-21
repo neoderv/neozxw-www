@@ -8,9 +8,13 @@ export async function load({ fetch, cookies }) {
     let username = await auth(fetch, cookies);
     if (!username || username.username == '!nobody') return [];
 
-    let messages = await db.all('SELECT * FROM messages WHERE username = ? AND isRead = false', [
+    let data = await db.all('SELECT * FROM messages WHERE username = ?', [
         username.username
     ]);
 
-    return { messages, authVal: username };
+    await db.all('UPDATE messages SET isRead = true WHERE username = ?', [
+        username.username
+    ]);
+
+    return { data, authVal: username };
 }

@@ -23,13 +23,43 @@ export const actions = {
 			date,
 			content
 		]);
+		
+		let msgQuery = 'INSERT INTO messages (username, date, isRead, href, content) VALUES (?,?,?,?,?)';
 
 		if (params.type == 'project') { 
-			throw redirect(302, '/embed/'+params.id);
+			let href = '/embed/'+params.id;
+
+			let projects = await db.all('SELECT * FROM project WHERE id = ?', [
+				params.id
+			]);
+
+			if (projects.length < 1) return;
+
+			let project = projects[0];
+
+			await db.run(msgQuery,[
+				project.username,
+				date,
+				false,
+				href,
+				`${username.username} left a message on your project "${project.title}"`
+			]);
+
+			throw redirect(302, href);
 		}
 
 		if (params.type == 'user') {
-			throw redirect(302, '/users/'+params.id);
+			let href = '/users/'+params.id;
+
+			await db.run(msgQuery,[
+				params.id,
+				date,
+				false,
+				href,
+				`${username.username} left a message on your profile`
+			]);
+
+			throw redirect(302, href);
 		}
     }
 }
