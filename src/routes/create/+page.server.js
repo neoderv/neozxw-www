@@ -40,6 +40,16 @@ export const actions = {
                 (baseProject) ? baseProject.root : id,
                 (baseProject) ? root : null
             ]);
+
+            if (baseProject) {
+                await db.run('INSERT INTO messages (username, date, isRead, href, content) VALUES (?,?,?,?,?)',[
+                    baseProject.username,
+                    date,
+                    false,
+                    '/embed/'+id,
+                    `${username.username} remixed your project "${project.title}"`
+                ]);
+            }
         }
 
         await writeFile(`${process.cwd()}/db/projects/${id}.sb3`,file.stream());

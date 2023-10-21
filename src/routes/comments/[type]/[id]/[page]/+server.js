@@ -5,7 +5,7 @@ import { initDb } from '$lib/db.js';
 export async function GET({params}) {
     let db = await initDb();
 
-    let query = await db.all('SELECT * FROM comment WHERE targetType = ? and targetId = ? ORDER BY date DESC LIMIT ?, ?', [
+    let query = await db.all('SELECT * FROM comment WHERE targetType = ? AND targetId = ? ORDER BY date DESC LIMIT ?, ?', [
         params.type,
         params.id,
         params.page * 5,

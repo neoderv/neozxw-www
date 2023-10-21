@@ -13,18 +13,46 @@ export const actions = {
 
 		const data = await request.formData();
         let content = data.get('content') || '';
+		let target = data.get('target') || '';
 
 		if (content.length < 1) return;
 
-		await db.run('INSERT INTO comment (username, targetType, targetId, date, content) VALUES (?,?,?,?,?)',[
+		let allComments = (await db.all('SELECT * FROM comment')).length;
+
+		if (target != '' && target) {
+			params.type = 'reply';
+			params.id = target;
+		}
+
+		await db.run('INSERT INTO comment (username, targetType, targetId, date, content, id) VALUES (?,?,?,?,?,?)',[
 			username.username,
 			params.type,
 			params.id,
 			date,
-			content
+			content,
+			allComments + 1
 		]);
 		
 		let msgQuery = 'INSERT INTO messages (username, date, isRead, href, content) VALUES (?,?,?,?,?)';
+
+
+		if (params.type == 'reply') {
+			let oldComment = await db.all('SELECT * FROM comment WHERE id = ?', [
+				params.id
+			]);
+
+			if (oldComment.length < 1) throw redirect(302, '/');
+
+			await db.run(msgQuery,[
+				oldComment[0].username,
+				date,
+				false,
+				'#',
+				`${username.username} replied to your comment`
+			]);
+
+			throw redirect(302, '/');
+		}
 
 		if (params.type == 'project') { 
 			let href = '/embed/'+params.id;

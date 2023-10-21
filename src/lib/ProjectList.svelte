@@ -43,6 +43,8 @@
     >
         <p>Content</p>
         <textarea type="text" name="content" />
+        <p>Reply ID</p>
+        <input type="text" name="target" />
         <p>Comment</p>
         <input type="submit" />
     </form>
@@ -60,14 +62,22 @@
         {/each}
         <span bind:this={bottom} />
     </div>
-{:else if type == "comment"}
+{:else if type == "comment" || type == 'reply'}
     <div class="comments area">
-        <h2>Comments</h2>
+        {#if type == "comment"}
+            <h2>Comments</h2>
+        {/if}
         {#each projects as proj}
             <Comment
                 username={proj.username}
                 date={proj.date}
                 content={proj.content}
+                id={proj.id}
+            />
+            <svelte:self
+                type="reply"
+                endpoint="/comments/reply/{proj.id}/"
+                id={proj.id}
             />
         {/each}
         <span bind:this={bottom} />
@@ -85,5 +95,9 @@
     .comments {
         display: flex;
         flex-direction: column;
+    }
+
+    .area {
+        width: auto;
     }
 </style>
