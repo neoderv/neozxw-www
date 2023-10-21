@@ -8,7 +8,7 @@ export async function load({ fetch, cookies }) {
     let username = await auth(fetch, cookies);
     if (!username || username.username == '!nobody') return [];
 
-    let data = await db.all('SELECT * FROM messages WHERE username = ?', [
+    let data = await db.all('SELECT * FROM messages WHERE username = ? ORDER BY date DESC', [
         username.username
     ]);
 
