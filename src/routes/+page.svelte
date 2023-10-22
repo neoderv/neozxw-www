@@ -17,6 +17,7 @@
     </p>
 
     <div class='margin'>
+        <a href='/tos' class='button'>Guidelines</a>
         <a href='https://discord.gg/4cb8RaCS8p' class='button'>Chat</a>
         <a href='https://main.dervland.net/' class='button'>Other Projects</a>
     </div>
