@@ -81,7 +81,7 @@
         }
     }
 
-    :global(.button) {
+    :global(.button, input:last-child) {
         display: flex;
         justify-content: center;
         padding: 1rem;
